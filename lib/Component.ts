@@ -205,7 +205,7 @@ export class Component extends stream.Duplex {
               }
             }
           })
-          .catch(console.log.bind(console));
+          .catch(console.log.bind(console,"ERROR:registerOnFinish:"));
       }
 
       setTimeout(() => { }, 1000);
@@ -254,7 +254,7 @@ export class Component extends stream.Duplex {
         this.push(null);
         this.closed = true;
       })
-      .catch(console.log.bind(console, "Error:"));
+      .catch(console.log.bind(console, "ERROR:Close:"));
     return this.closingPromise;
   }
 
@@ -486,7 +486,7 @@ export class Component extends stream.Duplex {
         nextComponent.changeState(omx.STATETYPE.StateExecuting);
         this.changeState(omx.STATETYPE.StateExecuting);
       })
-      .catch(console.log.bind(console));
+      .catch(console.log.bind(console,"ERROR:doTunnel:"));
   }
   tunnel(nextComponent: Component) {
     if (this.name === "video_decode") {
@@ -516,7 +516,7 @@ export class Component extends stream.Duplex {
             return this.changeState(omx.STATETYPE.StateExecuting);
           }
         })
-        .catch(console.log.bind(console));
+        .catch(console.log.bind(console,"ERROR:initRead:"));
     } else {
       return Promise.resolve();
     }
@@ -554,7 +554,7 @@ export class Component extends stream.Duplex {
           this.fillBuffer(this.out_list[i].header);
         }
       })
-      .catch(console.log.bind(console));
+      .catch(console.log.bind(console,"ERROR:readyToRead:"));
   }
   _read() {
     this.debug('_read');
@@ -604,7 +604,7 @@ export class Component extends stream.Duplex {
           return Promise.resolve();
         }
       })
-      .catch(console.log.bind(console));
+      .catch(console.log.bind(console,"ERROR:writeRecursive:"));
   }
 
   initWrite() {
@@ -627,7 +627,7 @@ export class Component extends stream.Duplex {
           }
           return Promise.resolve();
         })
-        .catch(console.log.bind(console));
+        .catch(console.log.bind(console,"ERROR:initWrite:"));
     } else {
       return Promise.resolve();
     }
@@ -640,7 +640,7 @@ export class Component extends stream.Duplex {
         return this.writeRecursive(chunk, 0);
       })
       .then(next)
-      .catch(console.log.bind(console));
+      .catch(console.log.bind(console,"ERROR:_write:"));
 
   }
 }

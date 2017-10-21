@@ -1,0 +1,30 @@
+import omx = require('../../index');
+export declare class Camera extends omx.Component {
+    constructor(name?: string);
+    setFormat(): Camera;
+    enable(): Camera;
+    disable(): Camera;
+    getDigitalZoom(): omx.CameraZoom;
+    setDigitalZoom(zoom?: omx.CameraZoom): void;
+    getCamplusId(): number;
+    setCamplusId(nU32: number): void;
+    getCameraDeviceNumber(): number;
+    setCameraDeviceNumber(nU32: number): void;
+    getCameraDevicesPresent(): number;
+    getFrameStabilisation(): boolean;
+    setFrameStabilisation(enabled?: boolean): void;
+    getExposure(): omx.EXPOSURECONTROLTYPE;
+    setExposure(exposureControl?: omx.EXPOSURECONTROLTYPE): void;
+    getExposureValue(): omx.CONFIG_EXPOSUREVALUETYPE;
+    setExposureValue(value?: omx.CONFIG_EXPOSUREVALUETYPE): void;
+    getFocusControl(): number;
+    setFocusControl(nContrast?: number): void;
+    getContrast(): number;
+    setContrast(nContrast?: number): void;
+    getBrightness(): number;
+    setBrightness(nBrightness?: number): void;
+    getSaturation(): number;
+    setSaturation(nSaturation?: number): void;
+    getVideoFramerate(): number;
+    setVideoFramerate(fps?: number): void;
+}

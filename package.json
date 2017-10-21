@@ -1,6 +1,6 @@
 {
-  "name": "openmax",
-  "version": "1.6.0",
+  "name": "@palavrov/openmax",
+  "version": "1.6.1",
   "author": "Jean-Philippe Bergeron",
   "description": "Node wrapper for the OpenMAX library",
   "main": "dist/index.js",
@@ -28,11 +28,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jean343/Node-OpenMAX.git"
+    "url": "git+https://github.com/jean343/Node-OpenMAX.git"
   },
   "license": "MIT",
   "devDependencies": {
     "jasmine": "^2.5.1",
     "typescript": "^1.7.5"
+  },
+  "bugs": {
+    "url": "https://github.com/jean343/Node-OpenMAX/issues"
+  },
+  "homepage": "https://github.com/jean343/Node-OpenMAX#readme",
+  "directories": {
+    "example": "examples"
   }
 }
